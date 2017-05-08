@@ -1487,7 +1487,7 @@ formatExpression' elmVersion importInfo context aexpr =
                         )
                     |> andThen
                         [ line $ keyword "in"
-                        , stack1 $
+                        , indent $ stack1 $
                             (map formatComment bodyComments)
                             ++ [formatExpression elmVersion importInfo SyntaxSeparated expr]
                         ]
